@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "express": "^5.2.1",
     "figlet": "^1.10.0"
   },
   "name": "learningnode",
   "version": "2.3.1",
   "description": "learning backend",
   "main": "y",
-  "devDependencies": {},
   "scripts": {
     "test": "test"
   },

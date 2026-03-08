@@ -1,0 +1,19 @@
+<%- include("includes/head.ejs")
+<body>
+    <h1>Dice gave value :
+<%= val%>
+    </h1>
+
+    <h1>
+        <% if(val==6){ %>
+    <h2>you won !!!!!!!!!!!!"</h2>
+<% }
+else{ %>
+    <h2>    try again please
+</h2>
+<%
+}
+%>
+    </h1>
+</body>
+
