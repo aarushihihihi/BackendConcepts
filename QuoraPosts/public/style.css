@@ -1,0 +1,19 @@
+h1{
+    color: maroon;
+}
+
+
+.post{
+    border: 2px solid red;
+    height: 300px;
+    width: 500px;
+    margin: 10px 10px;
+}
+
+.user{
+    margin: 10px 10px ;
+}
+
+.content{
+    margin: 10px 10px;
+}
