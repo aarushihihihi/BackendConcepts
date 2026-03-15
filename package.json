@@ -1,7 +1,10 @@
 {
   "dependencies": {
     "express": "^5.2.1",
+<<<<<<< HEAD
     "faker": "^6.6.6",
+=======
+>>>>>>> 74b8e07 (ejs templating,oops)
     "figlet": "^1.10.0"
   },
   "name": "learningnode",
