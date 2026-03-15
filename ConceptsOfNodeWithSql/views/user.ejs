@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Details</h1>
+
+    <a href="http://localhost:8080/user/new">Add new</a>
+
+<table border>
+    <tr >
+        <th>ID   : </th>
+        <th>NaME : </th>
+        <th>Email : </th>
+        <th>Action :</th>
+    </tr>
+   <% for(let i=0;i<result.length;i++){ %>
+
+
+
+    <tr>
+        <td>
+<%=result[i].id%>
+        </td>
+        
+        <td>
+<%=result[i].username %>
+        </td>
+        <td>
+<%=result[i].email %>
+        </td>
+
+<td>
+
+        
+        <form method="get" action="/user/<%=result[i].id%>/edit">
+            <button>Edit</button>
+</form>
+
+
+
+
+
+</td>
+
+
+<td>
+    <form method="post" action="/user/<%=result[i].id%>?_method=DELETE">
+        <button>Delete</button>
+    </form>
+</td>
+
+        </td>
+    </tr>
+    <%}%>
+</table>
+
+
+
+</body>
+</html>
