@@ -1,0 +1,27 @@
+<%- include("includes/head.ejs") %>
+<body>
+    <h1>Instagram ejs.....</h1>
+    <h1>
+<%= data.name%>
+<%= data.followers%>
+<%= data.following%>
+<hr/>
+<%for(let post of data.posts){ %>
+<img  src="<%= post.image %>" alt=""some image/>
+<%=post.likes%>
+<%=post.comments%>
+<%}%>
+<hr/>
+
+
+    </h1>
+
+    <button>
+        Follow
+    </button>
+    <button>
+        Message
+    </button>
+    <script src="/app.js"></script>
+</body>
+
