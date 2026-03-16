@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My ChATS</h1>
+
+    <a href="/chats/new">Create new chat</a>
+    <table border>
+
+        <tr>
+            <th>Id</th>
+            <th>From</th>
+            <th>To</th>
+            <th>Message</th>
+            <th>Created at</th>
+            <th>Created at</th>
+            <th>
+
+                    Update
+            </th>
+            <th>Delete</th>
+        </tr>
+             <%   for(chat of chats){ %>
+
+        <tr>
+            <td><%=chat.id %></td>
+            <td><%=chat.from%></td>
+            <td><%=chat.to%></td>
+            <td><%=chat.message%></td>
+            <td><%= chat.createdAt.toString().split(" ")[4]%></td>
+                        <td><%= chat.createdAt.toString().split(" ").slice(0,4).join(" -")%></td>
+
+  
+  
+                        <td>
+
+
+            <a href="/chats/<%=chat.id%>/edit">Edit</a>
+                        </td>
+<td>
+
+            <form method="post" action="/chats/<%=chat.id%>?_method=delete">
+                <button>Delete</button>
+            </form>
+            </td>
+
+        </tr>
+
+
+   <% }  %>
+    </table>
+</body>
+</html>

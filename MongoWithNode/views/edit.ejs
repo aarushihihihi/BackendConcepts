@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <form method="post" action="/chats/<%=chat.id%>?_method=put">
+
+    <h1>Edit my chat<%=chat.id%></h1>
+    <input name="from" value=<%=chat.from%>/>
+    <input name="to"  value=<%=chat.to%>/>
+    <textarea name="message"><%=chat.message%></textarea>
+
+    <button>Update</button>
+
+        </form>
+
+</body>
+</html>
