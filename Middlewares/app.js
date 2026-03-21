@@ -1,5 +1,5 @@
 const express=require("express");
-
+const ExpressError=require("./ExpressError.js")
 const app=express();
 const port=8080;
 
@@ -47,8 +47,7 @@ if(token==="giveaccess"){
 
 }
 
-throw new Error("access denied")
-
+throw  new ExpressError(89098,"token not correct");
 })
 app.get("/api",checkToken,(req,res)=>{ //pass middleware function
     res.send("api sending request")
@@ -60,8 +59,10 @@ app.use("/err",(req,res)=>{
 app.use((err,req,res,next)=>{
 console.log('error--------',err);
 
-    next(err);
-})
+let {status=500,message="some message"}=err;   //default status
+res.status(status).send(message);
+
+res.send(err)})
 
 app.use((err,req,res,next)=>{
 console.log('error: ',err);
@@ -104,3 +105,8 @@ app.get("/random",checkToken,(req,res)=>{
     res.send("thhis is random page")
 })
 
+
+
+app.get("/admin",(req,res)=>{
+    throw new  ExpressError(403,"access forbidden");
+})
